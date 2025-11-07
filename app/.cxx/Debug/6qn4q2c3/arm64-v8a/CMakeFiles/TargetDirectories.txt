@@ -1,0 +1,3 @@
+/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/arm64-v8a/CMakeFiles/synthesizer.dir
+/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/arm64-v8a/CMakeFiles/rebuild_cache.dir

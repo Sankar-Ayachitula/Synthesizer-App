@@ -1,0 +1,4 @@
+# ninja log v5
+0	17	1762491051134028578	CMakeFiles/synthesizer.dir/synthesizer.cpp.o	e728ad7b8fea5620
+0	144	1762491051259843681	CMakeFiles/synthesizer.dir/jni_bridge.cpp.o	90e1d84c8b2b8567
+145	178	1762491051292903512	/Users/sankarayachitula/StudioProjects/Synthesizer/app/build/intermediates/cxx/Debug/6qn4q2c3/obj/arm64-v8a/libsynthesizer.so	e4b55dc8c21b1d94
