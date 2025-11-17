@@ -1,6 +1,7 @@
 {
   "buildFiles": [
-    "/Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp/CMakeLists.txt"
+    "/Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp/CMakeLists.txt",
+    "/Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp/oboe/CMakeLists.txt"
   ],
   "cleanCommandsComponents": [
     [
@@ -21,6 +22,12 @@
       "artifactName": "synthesizer",
       "abi": "x86",
       "output": "/Users/sankarayachitula/StudioProjects/Synthesizer/app/build/intermediates/cxx/Debug/6qn4q2c3/obj/x86/libsynthesizer.so",
+      "runtimeFiles": []
+    },
+    "oboe::@0db0cf03f2959f768628": {
+      "artifactName": "oboe",
+      "abi": "x86",
+      "output": "/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/x86/oboe/liboboe.a",
       "runtimeFiles": []
     }
   }

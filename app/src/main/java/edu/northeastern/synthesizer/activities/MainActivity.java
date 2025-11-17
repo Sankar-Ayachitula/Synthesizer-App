@@ -19,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
 
     public native String startSynth();
 
+    public native void startLfoSynth();
+
+    public native void stopLfoSynth();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         String s = startSynth();
+
+        startLfoSynth();
+
         Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
 

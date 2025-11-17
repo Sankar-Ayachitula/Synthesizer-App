@@ -1,1 +1,2 @@
 /Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp/CMakeLists.txt
+/Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp/oboe/CMakeLists.txt

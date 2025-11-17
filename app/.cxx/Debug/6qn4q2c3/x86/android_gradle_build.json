@@ -1,6 +1,7 @@
 {
   "buildFiles": [
-    "/Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp/CMakeLists.txt"
+    "/Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp/CMakeLists.txt",
+    "/Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp/oboe/CMakeLists.txt"
   ],
   "cleanCommandsComponents": [
     [
@@ -17,6 +18,12 @@
     "{LIST_OF_TARGETS_TO_BUILD}"
   ],
   "libraries": {
+    "oboe::@0db0cf03f2959f768628": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "oboe",
+      "output": "/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/x86/oboe/liboboe.a"
+    },
     "synthesizer::@6890427a1f51a3e7e1df": {
       "toolchain": "toolchain",
       "abi": "x86",

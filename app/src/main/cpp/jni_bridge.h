@@ -11,4 +11,4 @@ class jni_bridge {
 };
 
 
-#endif //SYNTHESIZER_JNI_BRIDGE_H
+#endif
