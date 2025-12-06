@@ -7,6 +7,32 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
+    <!--For the final mixed output -->
+    <edu.northeastern.synthesizer.views.OscilloscopeView
+        android:id="@+id/oscilloscopeView"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnRecord"
+        />
+
+    <!-- For the Record and stop button -->
+    <Button
+        android:id="@+id/btnRecord"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Record"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/oscilloscopeView"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_waveform"
         android:layout_width="match_parent"

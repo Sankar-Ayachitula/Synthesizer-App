@@ -1,20 +1,20 @@
 {
   "buildFiles": [
-    "/Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp/CMakeLists.txt",
-    "/Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp/oboe/CMakeLists.txt"
+    "C:\\Users\\prana\\Downloads\\Synthesizer\\Synthesizer\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "C:\\Users\\prana\\Downloads\\Synthesizer\\Synthesizer\\app\\src\\main\\cpp\\oboe\\CMakeLists.txt"
   ],
   "cleanCommandsComponents": [
     [
-      "/Users/sankarayachitula/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "C:\\Users\\prana\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
       "-C",
-      "/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/x86",
+      "C:\\Users\\prana\\Downloads\\Synthesizer\\Synthesizer\\app\\.cxx\\Debug\\6qn4q2c3\\x86",
       "clean"
     ]
   ],
   "buildTargetsCommandComponents": [
-    "/Users/sankarayachitula/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "C:\\Users\\prana\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
     "-C",
-    "/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/x86",
+    "C:\\Users\\prana\\Downloads\\Synthesizer\\Synthesizer\\app\\.cxx\\Debug\\6qn4q2c3\\x86",
     "{LIST_OF_TARGETS_TO_BUILD}"
   ],
   "libraries": {
@@ -22,20 +22,20 @@
       "toolchain": "toolchain",
       "abi": "x86",
       "artifactName": "oboe",
-      "output": "/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/x86/oboe/liboboe.a"
+      "output": "C:\\Users\\prana\\Downloads\\Synthesizer\\Synthesizer\\app\\.cxx\\Debug\\6qn4q2c3\\x86\\oboe\\liboboe.a"
     },
     "synthesizer::@6890427a1f51a3e7e1df": {
       "toolchain": "toolchain",
       "abi": "x86",
       "artifactName": "synthesizer",
-      "output": "/Users/sankarayachitula/StudioProjects/Synthesizer/app/build/intermediates/cxx/Debug/6qn4q2c3/obj/x86/libsynthesizer.so",
+      "output": "C:\\Users\\prana\\Downloads\\Synthesizer\\Synthesizer\\app\\build\\intermediates\\cxx\\Debug\\6qn4q2c3\\obj\\x86\\libsynthesizer.so",
       "runtimeFiles": []
     }
   },
   "toolchains": {
     "toolchain": {
-      "cCompilerExecutable": "/Users/sankarayachitula/Library/Android/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
-      "cppCompilerExecutable": "/Users/sankarayachitula/Library/Android/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+      "cCompilerExecutable": "C:\\Users\\prana\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "C:\\Users\\prana\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
     }
   },
   "cFileExtensions": [],

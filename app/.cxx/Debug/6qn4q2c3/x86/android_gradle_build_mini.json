@@ -1,33 +1,33 @@
 {
   "buildFiles": [
-    "/Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp/CMakeLists.txt",
-    "/Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp/oboe/CMakeLists.txt"
+    "C:\\Users\\prana\\Downloads\\Synthesizer\\Synthesizer\\app\\src\\main\\cpp\\CMakeLists.txt",
+    "C:\\Users\\prana\\Downloads\\Synthesizer\\Synthesizer\\app\\src\\main\\cpp\\oboe\\CMakeLists.txt"
   ],
   "cleanCommandsComponents": [
     [
-      "/Users/sankarayachitula/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "C:\\Users\\prana\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
       "-C",
-      "/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/x86",
+      "C:\\Users\\prana\\Downloads\\Synthesizer\\Synthesizer\\app\\.cxx\\Debug\\6qn4q2c3\\x86",
       "clean"
     ]
   ],
   "buildTargetsCommandComponents": [
-    "/Users/sankarayachitula/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "C:\\Users\\prana\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
     "-C",
-    "/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/x86",
+    "C:\\Users\\prana\\Downloads\\Synthesizer\\Synthesizer\\app\\.cxx\\Debug\\6qn4q2c3\\x86",
     "{LIST_OF_TARGETS_TO_BUILD}"
   ],
   "libraries": {
     "synthesizer::@6890427a1f51a3e7e1df": {
       "artifactName": "synthesizer",
       "abi": "x86",
-      "output": "/Users/sankarayachitula/StudioProjects/Synthesizer/app/build/intermediates/cxx/Debug/6qn4q2c3/obj/x86/libsynthesizer.so",
+      "output": "C:\\Users\\prana\\Downloads\\Synthesizer\\Synthesizer\\app\\build\\intermediates\\cxx\\Debug\\6qn4q2c3\\obj\\x86\\libsynthesizer.so",
       "runtimeFiles": []
     },
     "oboe::@0db0cf03f2959f768628": {
       "artifactName": "oboe",
       "abi": "x86",
-      "output": "/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/x86/oboe/liboboe.a",
+      "output": "C:\\Users\\prana\\Downloads\\Synthesizer\\Synthesizer\\app\\.cxx\\Debug\\6qn4q2c3\\x86\\oboe\\liboboe.a",
       "runtimeFiles": []
     }
   }
