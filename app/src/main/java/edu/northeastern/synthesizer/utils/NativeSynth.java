@@ -20,5 +20,14 @@ public class NativeSynth {
     public static native void setWaveLfoDepth(int waveId, float depth);
 
     public static native void setWaveType(int waveId, int waveType);
+
+    // class for fetching the latest waveform samples for oscilloscope
+    public static native void getWaveform(float[] buffer);
+
+    // function for start recording
+    public static native void startRecording(String filePath);
+
+    // function for stop recording
+    public static native void stopRecording();
 }
 
