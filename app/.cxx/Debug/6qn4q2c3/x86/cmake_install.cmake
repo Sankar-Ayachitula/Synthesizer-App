@@ -1,8 +1,8 @@
-# Install script for directory: /Users/sankarayachitula/StudioProjects/Synthesizer/app/src/main/cpp
+# Install script for directory: C:/Users/prana/Downloads/Synthesizer/Synthesizer/app/src/main/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/synthesizer")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,12 +39,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Users/sankarayachitula/Library/Android/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-objdump")
+  set(CMAKE_OBJDUMP "C:/Users/prana/AppData/Local/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/windows-x86_64/bin/llvm-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/x86/oboe/cmake_install.cmake")
+  include("C:/Users/prana/Downloads/Synthesizer/Synthesizer/app/.cxx/Debug/6qn4q2c3/x86/oboe/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/sankarayachitula/StudioProjects/Synthesizer/app/.cxx/Debug/6qn4q2c3/x86/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/prana/Downloads/Synthesizer/Synthesizer/app/.cxx/Debug/6qn4q2c3/x86/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
