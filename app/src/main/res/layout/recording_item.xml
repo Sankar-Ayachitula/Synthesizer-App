@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="12dp"
-    android:background="@android:color/white"
+    android:background="@drawable/wave_button_selector"
     android:layout_marginBottom="10dp">
 
     <TextView
@@ -29,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play"
+        android:background="@color/orange"
         android:layout_marginTop="6dp"/>
 
 </LinearLayout>
