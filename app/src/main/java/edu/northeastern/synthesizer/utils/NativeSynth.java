@@ -29,5 +29,9 @@ public class NativeSynth {
 
     // function for stop recording
     public static native void stopRecording();
+
+    //function to get the samples of the wave to show on UI
+    public static native float[] getWaveSamples(int waveId);
+
 }
 

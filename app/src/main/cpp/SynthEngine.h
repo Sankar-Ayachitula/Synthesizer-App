@@ -8,6 +8,17 @@ public:
     float sampleRate = 48000.0f;
     float mixGain = 0.25f;
 
+    float sampleWave(int waveId) {
+        if (waveId < 0 || waveId >= waves.size()) return 0.0f;
+
+        Oscillator* osc = waves[waveId];
+        if (!osc) return 0.0f;
+
+        return osc->nextSample();
+    }
+
+
+
     void setSampleRate(float sr) {
         sampleRate = sr;
         for (auto *osc : waves)

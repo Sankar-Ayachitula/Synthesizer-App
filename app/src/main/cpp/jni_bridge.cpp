@@ -391,4 +391,25 @@ Java_edu_northeastern_synthesizer_utils_NativeSynth_stopRecording(
     }
 }
 
+JNIEXPORT jfloatArray JNICALL
+Java_edu_northeastern_synthesizer_utils_NativeSynth_getWaveSamples(
+        JNIEnv* env,
+        jclass,
+        jint waveId) {
+
+    const int N = WAVEFORM_SIZE;
+    jfloatArray arr = env->NewFloatArray(N);
+    if (!arr) return nullptr;
+
+    std::vector<float> temp(N);
+
+    for (int i = 0; i < N; i++) {
+        temp[i] = gEngine.sampleWave(waveId);
+    }
+
+    env->SetFloatArrayRegion(arr, 0, N, temp.data());
+    return arr;
+}
+
+
 } // extern "C"

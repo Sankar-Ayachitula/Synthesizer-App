@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +24,7 @@ import java.util.List;
 import edu.northeastern.synthesizer.R;
 import edu.northeastern.synthesizer.models.WaveModel;
 import edu.northeastern.synthesizer.utils.NativeSynth;
+import edu.northeastern.synthesizer.views.WaveformView;
 
 public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder> {
 
@@ -37,6 +39,8 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
     @NonNull
     @Override
     public WaveViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.rv_wave_item, parent, false);
         return new WaveViewHolder(view);
@@ -54,6 +58,15 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
 
     class WaveViewHolder extends RecyclerView.ViewHolder {
 
+        private final android.os.Handler handler = new android.os.Handler();
+
+
+        WaveformView waveformView;
+
+        TextView waveIdTv;
+
+
+
         Button btnSine, btnTriangle, btnSquare, btnSaw;
         Button[] buttons;
         Slider freqSlider, lfoSlider;
@@ -70,6 +83,10 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
             btnSaw = itemView.findViewById(R.id.btnSawtooth);
             freqSlider = itemView.findViewById(R.id.freq_slider);
             lfoSlider = itemView.findViewById(R.id.lfo_slider);
+            waveformView = itemView.findViewById(R.id.waveformView);
+            waveIdTv = itemView.findViewById(R.id.waveId_tv);
+
+
 
             deleteButton = itemView.findViewById(R.id.deleteButton);
 
@@ -81,6 +98,30 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
             freqSlider.setValue(model.frequency);
             lfoSlider.setValue(model.lfoFrequency);
             highlightWaveType(WaveType.values()[model.waveType]);
+
+            int waveId= model.waveId+1;
+            waveIdTv.setText("Wave Id: " + waveId);
+
+
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+
+                    int pos = getBindingAdapterPosition();
+                    if (pos == RecyclerView.NO_POSITION) return;
+
+                    WaveModel m = waves.get(pos);
+
+                    float[] liveSamples = NativeSynth.getWaveSamples(m.waveId);
+
+                    if (liveSamples != null) {
+                        waveformView.updateWave(liveSamples);
+                    }
+
+                    handler.postDelayed(this, 16); // ~60fps
+                }
+            });
+
 
             btnSine.setOnClickListener(v -> updateType(model, WaveType.SINE, position));
             btnTriangle.setOnClickListener(v -> updateType(model, WaveType.TRIANGLE, position));

@@ -5,7 +5,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/wave_button_selector"
     android:padding="25dp">
+
+    <TextView
+        android:id="@+id/waveId_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wave Id:"
+        android:textSize="24sp"
+        android:textColor="@color/orange"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <edu.northeastern.synthesizer.views.WaveformView
+        android:id="@+id/waveformView"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/waveId_tv"  />
+
 
     <!-- Wave Frequency Label -->
     <TextView
@@ -13,8 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Wave Frequency (Hz)"
-        android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/waveformView"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Main Frequency Slider -->
@@ -39,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LFO Frequency (Hz)"
-        android:textSize="22sp"
+        android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/freq_slider"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -131,8 +152,8 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:background="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/wave_frequency_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/waveId_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/wave_frequency_tv" />
+        app:layout_constraintTop_toTopOf="@+id/waveId_tv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
