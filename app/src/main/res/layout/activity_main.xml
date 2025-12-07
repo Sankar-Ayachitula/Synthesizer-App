@@ -23,14 +23,15 @@
     <!-- For the Record and stop button -->
     <Button
         android:id="@+id/btnRecord"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Record"
-        android:background="@color/orange"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/oscilloscopeView"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_waveform"
@@ -47,12 +48,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADD WAVEFORM"
-        android:layout_margin="10dp"
-        android:paddingHorizontal="10dp"
-        android:background="@color/orange"
-        app:layout_constraintBottom_toTopOf="@id/btnRecord"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/btnHistory"
+        android:text="History"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
