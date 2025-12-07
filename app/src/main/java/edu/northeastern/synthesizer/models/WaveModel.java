@@ -2,6 +2,9 @@ package edu.northeastern.synthesizer.models;
 
 public class WaveModel {
 
+    public float[] previewWave = new float[300];  // static waveform
+
+
     public int waveId = -1;
 
     // Wave properties
@@ -23,7 +26,7 @@ public class WaveModel {
     public WaveModel() {
         this.waveType = 0;     // sine
         this.frequency = 440f;
-        this.amplitude = 1.0f;
+        this.amplitude = 0.8f;
         this.lfoFrequency = 0.5f;
         this.lfoDepth = 1.0f;
     }
