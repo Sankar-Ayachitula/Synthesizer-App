@@ -54,6 +54,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <TextView
+        android:id="@+id/volume_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volume"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/freq_slider"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- LFO Slider -->
+    <com.google.android.material.slider.Slider
+        android:id="@+id/volume_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:value="0"
+        android:valueFrom="0"
+        android:valueTo="1"
+        app:trackColorActive="@color/orange"
+        app:trackColorInactive="@color/orange"
+        app:thumbColor="@color/orange"
+        app:haloColor="@color/orange"
+        app:layout_constraintTop_toBottomOf="@id/volume_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
     <!-- LFO Label -->
     <TextView
         android:id="@+id/lfo_frequency_tv"
@@ -61,7 +85,7 @@
         android:layout_height="wrap_content"
         android:text="LFO Frequency (Hz)"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/freq_slider"
+        app:layout_constraintTop_toBottomOf="@id/volume_slider"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- LFO Slider -->

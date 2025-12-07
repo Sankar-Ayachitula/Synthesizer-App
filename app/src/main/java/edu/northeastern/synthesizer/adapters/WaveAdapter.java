@@ -69,7 +69,8 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
 
         Button btnSine, btnTriangle, btnSquare, btnSaw;
         Button[] buttons;
-        Slider freqSlider, lfoSlider;
+        Slider freqSlider, lfoSlider, volumeSlider;
+
         ImageButton deleteButton;
         Context context;
 
@@ -83,6 +84,7 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
             btnSaw = itemView.findViewById(R.id.btnSawtooth);
             freqSlider = itemView.findViewById(R.id.freq_slider);
             lfoSlider = itemView.findViewById(R.id.lfo_slider);
+            volumeSlider= itemView.findViewById(R.id.volume_slider);
             waveformView = itemView.findViewById(R.id.waveformView);
             waveIdTv = itemView.findViewById(R.id.waveId_tv);
 
@@ -97,6 +99,8 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
 
             freqSlider.setValue(model.frequency);
             lfoSlider.setValue(model.lfoFrequency);
+            volumeSlider.setValue(model.amplitude);
+
             highlightWaveType(WaveType.values()[model.waveType]);
 
             int waveId= model.waveId+1;
@@ -136,6 +140,11 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
             lfoSlider.addOnChangeListener((slider, value, fromUser) -> {
                 model.lfoFrequency = value;
                 listener.onWaveLfoChanged(position, model);
+            });
+
+            volumeSlider.addOnChangeListener((slider, value, fromUser) -> {
+                model.amplitude = value;
+                NativeSynth.setWaveAmplitude(model.waveId, value);
             });
 
             deleteButton.setOnClickListener(v -> {
