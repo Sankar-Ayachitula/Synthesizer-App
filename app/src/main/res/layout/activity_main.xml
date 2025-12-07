@@ -21,49 +21,57 @@
 <!--        />-->
 
     <!-- For the Record and stop button -->
+
+        <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_waveform"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp"
+        app:layout_constraintBottom_toTopOf="@id/addWaveForm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/btnRecord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Record"
+        android:layout_margin="10dp"
         android:background="@color/orange"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_waveform"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Record"
+        app:layout_constraintBottom_toBottomOf="@id/addWaveForm"
+        app:layout_constraintEnd_toStartOf="@id/addWaveForm"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/addWaveForm" />
 
     <Button
         android:id="@+id/addWaveForm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ADD WAVEFORM"
-        android:layout_margin="10dp"
-        android:paddingHorizontal="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/orange"
-        app:layout_constraintBottom_toTopOf="@id/btnRecord"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:paddingHorizontal="10dp"
+        android:text="ADD WAVEFORM"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnHistory"
+        app:layout_constraintStart_toEndOf="@id/btnRecord" />
 
     <Button
         android:id="@+id/btnHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recordings"
         android:layout_margin="10dp"
-        android:paddingHorizontal="10dp"
+        android:layout_marginBottom="84dp"
         android:background="@color/orange"
-        app:layout_constraintBottom_toTopOf="@+id/addWaveForm"
+        android:paddingHorizontal="10dp"
+        android:text="Recordings"
+        app:layout_constraintBottom_toBottomOf="@id/addWaveForm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/addWaveForm"
+        app:layout_constraintTop_toTopOf="@+id/addWaveForm" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
