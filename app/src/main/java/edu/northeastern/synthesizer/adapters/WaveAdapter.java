@@ -4,7 +4,6 @@ import static edu.northeastern.synthesizer.adapters.WaveType.SAWTOOTH;
 import static edu.northeastern.synthesizer.adapters.WaveType.SINE;
 import static edu.northeastern.synthesizer.adapters.WaveType.SQUARE;
 import static edu.northeastern.synthesizer.adapters.WaveType.TRIANGLE;
-import edu.northeastern.synthesizer.adapters.WaveType;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +22,7 @@ import java.util.List;
 
 import edu.northeastern.synthesizer.R;
 import edu.northeastern.synthesizer.models.WaveModel;
+import edu.northeastern.synthesizer.utils.NativeSynth;
 
 public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder> {
 
@@ -55,8 +56,8 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
 
         Button btnSine, btnTriangle, btnSquare, btnSaw;
         Button[] buttons;
-
         Slider freqSlider, lfoSlider;
+        ImageButton deleteButton;
         Context context;
 
         public WaveViewHolder(@NonNull View itemView) {
@@ -70,37 +71,21 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
             freqSlider = itemView.findViewById(R.id.freq_slider);
             lfoSlider = itemView.findViewById(R.id.lfo_slider);
 
+            deleteButton = itemView.findViewById(R.id.deleteButton);
+
             buttons = new Button[]{btnSine, btnTriangle, btnSquare, btnSaw};
         }
 
         public void bind(WaveModel model, int position) {
 
-            // Restore slider states
             freqSlider.setValue(model.frequency);
             lfoSlider.setValue(model.lfoFrequency);
-
-            // Restore wave type button highlight
             highlightWaveType(WaveType.values()[model.waveType]);
 
-            // --------- BUTTON LISTENERS ---------
-
-            btnSine.setOnClickListener(v -> {
-                updateType(model, WaveType.SINE, position);
-            });
-
-            btnTriangle.setOnClickListener(v -> {
-                updateType(model, WaveType.TRIANGLE, position);
-            });
-
-            btnSquare.setOnClickListener(v -> {
-                updateType(model, WaveType.SQUARE, position);
-            });
-
-            btnSaw.setOnClickListener(v -> {
-                updateType(model, WaveType.SAWTOOTH, position);
-            });
-
-            // --------- SLIDER LISTENERS ---------
+            btnSine.setOnClickListener(v -> updateType(model, WaveType.SINE, position));
+            btnTriangle.setOnClickListener(v -> updateType(model, WaveType.TRIANGLE, position));
+            btnSquare.setOnClickListener(v -> updateType(model, WaveType.SQUARE, position));
+            btnSaw.setOnClickListener(v -> updateType(model, WaveType.SAWTOOTH, position));
 
             freqSlider.addOnChangeListener((slider, value, fromUser) -> {
                 model.frequency = value;
@@ -111,6 +96,24 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
                 model.lfoFrequency = value;
                 listener.onWaveLfoChanged(position, model);
             });
+
+            deleteButton.setOnClickListener(v -> {
+
+                int pos = getBindingAdapterPosition();
+                if (pos == RecyclerView.NO_POSITION) return;
+
+                WaveModel m = waves.get(pos);
+
+                NativeSynth.removeWave(m.waveId);
+
+                waves.remove(pos);
+
+                notifyItemRemoved(pos);
+                notifyItemRangeChanged(pos, waves.size());
+
+            });
+
+
         }
 
         private void updateType(WaveModel model, WaveType type, int position) {
@@ -120,27 +123,16 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
         }
 
         private void highlightWaveType(WaveType type) {
-
-            // clear all
             for (Button btn : buttons) {
                 btn.setSelected(false);
                 btn.setTextColor(context.getColor(R.color.orange));
             }
 
-            // highlight selected
             switch (type) {
-                case SINE:
-                    select(btnSine);
-                    break;
-                case TRIANGLE:
-                    select(btnTriangle);
-                    break;
-                case SQUARE:
-                    select(btnSquare);
-                    break;
-                case SAWTOOTH:
-                    select(btnSaw);
-                    break;
+                case SINE:     select(btnSine); break;
+                case TRIANGLE: select(btnTriangle); break;
+                case SQUARE:   select(btnSquare); break;
+                case SAWTOOTH: select(btnSaw); break;
             }
         }
 

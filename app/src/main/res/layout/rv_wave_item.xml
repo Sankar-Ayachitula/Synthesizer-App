@@ -123,4 +123,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1" />
 
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/bin_delete"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/wave_frequency_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/wave_frequency_tv" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
