@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.MainActivity"
+    android:fitsSystemWindows="true">
 
     <!--For the final mixed output -->
 <!--    <edu.northeastern.synthesizer.views.OscilloscopeView-->
@@ -25,8 +26,8 @@
         <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_waveform"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="25dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@id/addWaveForm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -52,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:background="@color/orange"
         android:paddingHorizontal="10dp"
         android:text="ADD WAVEFORM"
