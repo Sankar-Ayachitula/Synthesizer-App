@@ -61,6 +61,16 @@
         app:layout_constraintEnd_toStartOf="@id/btnHistory"
         app:layout_constraintStart_toEndOf="@id/btnRecord" />
 
+    <TextView
+        android:id="@+id/emptyMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Waveform to hear the wave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rv_waveform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btnHistory"
         android:layout_width="wrap_content"

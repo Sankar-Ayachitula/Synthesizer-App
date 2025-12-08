@@ -2,7 +2,9 @@ package edu.northeastern.synthesizer.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -47,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements OnWaveTypeSelecte
 
         adapter = new WaveAdapter(waves, this);
         recyclerView.setAdapter(adapter);
+        updateEmptyState();
+
 
         NativeSynth.start();
 
@@ -152,6 +156,8 @@ public class MainActivity extends AppCompatActivity implements OnWaveTypeSelecte
         waves.add(model);
         adapter.notifyItemInserted(waves.size() - 1);
         recyclerView.smoothScrollToPosition(waves.size() - 1);
+
+        updateEmptyState();
     }
 
 
@@ -160,4 +166,15 @@ public class MainActivity extends AppCompatActivity implements OnWaveTypeSelecte
         super.onDestroy();
         NativeSynth.stop();
     }
+
+    public void updateEmptyState() {
+        TextView emptyMessage = findViewById(R.id.emptyMessage);
+
+        if (waves.isEmpty()) {
+            emptyMessage.setVisibility(View.VISIBLE);
+        } else {
+            emptyMessage.setVisibility(View.GONE);
+        }
+    }
+
 }

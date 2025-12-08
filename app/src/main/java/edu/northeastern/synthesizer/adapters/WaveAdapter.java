@@ -22,6 +22,7 @@ import com.google.android.material.slider.Slider;
 import java.util.List;
 
 import edu.northeastern.synthesizer.R;
+import edu.northeastern.synthesizer.activities.MainActivity;
 import edu.northeastern.synthesizer.models.WaveModel;
 import edu.northeastern.synthesizer.utils.NativeSynth;
 import edu.northeastern.synthesizer.views.WaveformView;
@@ -151,6 +152,8 @@ public class WaveAdapter extends RecyclerView.Adapter<WaveAdapter.WaveViewHolder
                 waves.remove(pos);
                 notifyItemRemoved(pos);
                 notifyItemRangeChanged(pos, waves.size());
+
+                ((MainActivity) context).updateEmptyState();
             });
         }
 
